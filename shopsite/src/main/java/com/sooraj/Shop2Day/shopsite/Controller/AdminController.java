@@ -5,6 +5,7 @@ import com.sooraj.Shop2Day.shopsite.DAO.ProductRepo;
 import com.sooraj.Shop2Day.shopsite.DTO.ProductDTO;
 import com.sooraj.Shop2Day.shopsite.Entity.Category;
 import com.sooraj.Shop2Day.shopsite.Entity.Product;
+import com.sooraj.Shop2Day.shopsite.Global.GlobalData;
 import com.sooraj.Shop2Day.shopsite.Service.CategoryService;
 import com.sooraj.Shop2Day.shopsite.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,13 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String adminHome(){
+        //GlobalData.findUserName();
+//        if(GlobalData.user_role.stream().anyMatch(e->e.getAuthority().equals("Admin"))){
+//            System.out.println("Admin user");
+//            return "adminHome";
+//        }
+//        System.out.println("Normal User");
+//        return "access-denied";
         return "adminHome";
     }
 

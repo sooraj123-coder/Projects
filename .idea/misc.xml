@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/shopsite/pom.xml" />
         <option value="$PROJECT_DIR$/MyDemojenkin/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
       </list>
     </option>
   </component>

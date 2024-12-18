@@ -1,6 +1,10 @@
 package com.sooraj.BlogApplication.payloads;
 
 import com.sooraj.BlogApplication.entities.User;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,17 +15,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTO {
-    private int id;
-    private String email;
-    private String name;
-    private String password;
-    private String about;
 
-    public UserDTO(User user) {
-        this.id = user.getId();
-        this.email = user.getEmail();
-        this.name = user.getName();
-        this.password = user.getPassword();
-        this.about = user.getAbout();
-    }
+    private int id;
+    @Email(message = "Email address is not valid !!")
+    private String email;
+
+    @NotEmpty
+    @Size(min = 4, message = "User name must be of minimum 4 characters !!")
+    private String name;
+
+    @NotEmpty
+    @Size(min=4,max = 10, message = "User password must not less than 4 and more than 10 characters !!")
+    private String password;
+
+    @NotEmpty
+    private String about;
 }
